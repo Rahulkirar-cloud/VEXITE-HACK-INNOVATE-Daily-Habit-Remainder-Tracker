@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Manage Habits</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/habits.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="top-bar">
+
+        <h2>📝 Manage Habits</h2>
+
+        <button id="darkModeBtn" onclick="toggleDarkMode()">
+            🌙 Dark Mode
+        </button>
+
+    </div>
+
+    <p id="todayDate"></p>
+
+    <nav>
+        <a href="index.html">🏠 Home</a>
+        <a href="statistics.html">📊 Statistics</a>
+    </nav>
+
+    <!-- ADD HABIT -->
+
+    <div class="habit-form">
+
+        <input
+            type="text"
+            id="habitInput"
+            placeholder="Enter habit"
+        >
+
+        <input
+            type="time"
+            id="timeInput"
+        >
+
+        <button onclick="addHabit()">
+            ➕ Add
+        </button>
+
+    </div>
+
+
+    <!-- SEARCH -->
+
+    <input
+        type="text"
+        id="searchHabit"
+        placeholder="🔍 Search habit..."
+        oninput="displayHabits()"
+    >
+
+
+    <!-- FILTER -->
+
+    <select id="filterHabit" onchange="displayHabits()">
+
+        <option value="all">All Habits</option>
+        <option value="completed">Completed</option>
+        <option value="pending">Pending</option>
+
+    </select>
+
+
+    <!-- SORT -->
+
+    <select id="sortHabit" onchange="displayHabits()">
+
+        <option value="default">Default</option>
+        <option value="name">Name</option>
+        <option value="time">Time</option>
+
+    </select>
+
+
+    <!-- HABIT LIST -->
+
+    <div id="habitList"></div>
+
+
+    <!-- CLEAR -->
+
+    <button
+        class="clear-btn"
+        onclick="clearAllHabits()"
+    >
+        🗑 Clear All
+    </button>
+
+</div>
+
+
+<script src="/js/main.js"></script>
+<script src="/js/habits.js"></script>
+
+</body>
+</html>

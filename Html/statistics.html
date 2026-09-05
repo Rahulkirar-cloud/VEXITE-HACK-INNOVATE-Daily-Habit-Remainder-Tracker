@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Statistics</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/statistics.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="top-bar">
+
+        <h2>📊 Task Manager</h2>
+
+        <button id="darkModeBtn" onclick="toggleDarkMode()">
+            🌙 Dark Mode
+        </button>
+
+    </div>
+
+    <p id="todayDate"></p>
+
+    <nav>
+        <a href="index.html">🏠 Home</a>
+        <a href="habits.html">📝 Habits</a>
+    </nav>
+
+
+    <!-- STATISTICS -->
+
+    <div class="stats">
+
+        <div class="stat-card">
+            <h3>Total</h3>
+            <p id="totalHabits">0</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>Completed</h3>
+            <p id="completedHabits">0</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>Pending</h3>
+            <p id="pendingHabits">0</p>
+        </div>
+
+    </div>
+
+
+    <!-- PROGRESS -->
+
+    <div class="progress-container">
+
+        <h3>Today's Progress</h3>
+
+        <div class="progress-bar">
+
+            <div id="progress"></div>
+
+        </div>
+
+        <p id="progressText">
+            0% Completed
+        </p>
+
+    </div>
+
+
+    <!-- STREAK -->
+
+    <div class="streak-card">
+
+        <h2>🔥 Daily Streak</h2>
+
+        <p>
+            <span id="streakCount">0</span> Days
+        </p>
+
+    </div>
+
+
+    <!-- WEEKLY -->
+
+    <div class="calendar-section">
+
+        <h2>📅 Weekly Progress</h2>
+
+        <div
+            id="weekCalendar"
+            class="week-calendar">
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="/js/main.js"></script>
+<script src="/js/statistics.js"></script>
+
+</body>
+</html>

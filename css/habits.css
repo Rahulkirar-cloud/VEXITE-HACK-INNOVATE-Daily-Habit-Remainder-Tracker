@@ -1,0 +1,109 @@
+.habit-form {
+    display: flex;
+    gap: 10px;
+    margin: 25px 0;
+}
+
+.habit-form input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+#searchHabit {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+select {
+    padding: 10px;
+    margin-right: 8px;
+
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+
+/* HABIT ITEM */
+
+.habit-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 15px;
+
+    margin-top: 15px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 10px;
+}
+
+.habit-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.habit-name {
+    font-weight: bold;
+}
+
+.habit-name.completed {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+.habit-time {
+    font-size: 13px;
+    color: #777;
+    margin-top: 5px;
+}
+
+.buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.edit-btn {
+    background: #3498db;
+}
+
+.delete-btn {
+    background: #e74c3c;
+}
+
+.clear-btn {
+    margin-top: 25px;
+    background: #e74c3c;
+}
+
+.no-habits {
+    text-align: center;
+    margin-top: 30px;
+    color: #777;
+}
+
+
+@media (max-width: 600px) {
+
+    .habit-form {
+        flex-direction: column;
+    }
+
+    .habit-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .buttons {
+        width: 100%;
+    }
+}
