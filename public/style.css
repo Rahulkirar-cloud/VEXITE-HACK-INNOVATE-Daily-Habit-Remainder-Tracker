@@ -4,6 +4,93 @@
     box-sizing: border-box;
     
 }
+/* TOP BAR */
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#todayDate {
+    color: #666;
+    font-size: 15px;
+}
+
+#darkModeBtn {
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    background: #333;
+    color: white;
+}
+
+
+/* STREAK */
+
+.streak-card {
+    text-align: center;
+    background: #f5f5f5;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+}
+
+.streak-card h2 {
+    margin-bottom: 10px;
+}
+
+#streakCount {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+
+/* DARK MODE */
+
+body.dark-mode {
+    background: #181818;
+    color: white;
+}
+
+body.dark-mode .container {
+    background: #242424;
+}
+
+body.dark-mode .subtitle,
+body.dark-mode #todayDate,
+body.dark-mode #progressText {
+    color: #bbb;
+}
+
+body.dark-mode .stat-card,
+body.dark-mode .streak-card,
+body.dark-mode .habit-item {
+    background: #333;
+}
+
+body.dark-mode .habit-time {
+    color: #bbb;
+}
+
+body.dark-mode #darkModeBtn {
+    background: white;
+    color: #222;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .top-bar {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+}
 
 body {
     font-family: Arial, sans-serif;
