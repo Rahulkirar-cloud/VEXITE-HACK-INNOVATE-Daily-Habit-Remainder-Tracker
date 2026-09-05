@@ -6,48 +6,140 @@
 
     <title>Daily Habit Reminder</title>
 
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/statistics.css">
 </head>
 
 <body>
 
-    <div class="container">
+<div class="container">
 
-        <div class="top-bar">
+    <!-- TOP BAR -->
+
+    <div class="top-bar">
+
+        <div>
             <h2>🌱 Daily Habit Reminder</h2>
-
-            <button id="darkModeBtn" onclick="toggleDarkMode()">
-                🌙 Dark Mode
-            </button>
+            <p id="todayDate"></p>
         </div>
 
-        <p id="todayDate"></p>
+        <button
+            id="darkModeBtn"
+            onclick="toggleDarkMode()">
+            🌙 Dark Mode
+        </button>
 
-        <div class="home-content">
+    </div>
 
-            <h1>Build Better Habits 🚀</h1>
 
-            <p>
-                Track your daily habits and improve yourself every day.
-            </p>
+    <!-- DASHBOARD -->
 
-            <div class="home-buttons">
+    <div class="dashboard">
 
-                <a href="habits.html">
-                    <button>📝 Manage Habits</button>
-                </a>
+        <h1 id="greeting">Good Morning! 👋</h1>
 
-                <a href="statistics.html">
-                    <button>📊 View Task</button>
-                </a>
+        <p>
+            Stay consistent and build better habits every day.
+        </p>
+
+
+        <!-- PROGRESS -->
+
+        <div class="dashboard-progress">
+
+            <h3>📈 Today's Progress</h3>
+
+            <div class="progress-bar">
+
+                <div id="progress"></div>
 
             </div>
+
+            <p id="progressText">
+                0% Completed
+            </p>
+
+        </div>
+
+
+        <!-- STREAK -->
+
+        <div class="streak-card">
+
+            <h2>🔥 Daily Streak</h2>
+
+            <p>
+                <span id="streakCount">0</span> Days
+            </p>
+
+        </div>
+
+
+        <!-- STATISTICS -->
+
+        <div class="stats">
+
+            <div class="stat-card">
+                <h3>📋 Total</h3>
+                <p id="totalHabits">0</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>✅ Completed</h3>
+                <p id="completedHabits">0</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>⏳ Pending</h3>
+                <p id="pendingHabits">0</p>
+            </div>
+
+        </div>
+
+  <!-- AI DAILY PLAN -->
+
+<div class="ai-plan">
+
+    <h2>🤖 AI Daily Plan</h2>
+
+    <p>
+        Let AI create a daily plan from your habits.
+    </p>
+
+    <button onclick="generateDailyPlan()">
+        ✨ Generate My Plan
+    </button>
+
+    <div id="aiPlanResult"></div>
+
+</div>
+        <!-- BUTTONS -->
+
+        <div class="home-buttons">
+
+            <a href="habits.html">
+                <button>
+                    📝 Manage Habits
+                </button>
+            </a>
+
+            <a href="statistics.html">
+                <button>
+                    📊 Task 
+                </button>
+            </a>
 
         </div>
 
     </div>
 
-    <script src="/js/main.js"></script>
+</div>
+
+
+<script src="/js/main.js"></script>
+<script src="/js/statistics.js"></script>
+<script src="/js/ai-plan.js"></script>
 
 </body>
 </html>
