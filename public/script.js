@@ -278,12 +278,52 @@ function updateProgress() {
     const progress =
         document.getElementById("progress");
 
-
     const progressText =
         document.getElementById("progressText");
 
+    const totalHabits =
+        document.getElementById("totalHabits");
 
-    if (habits.length === 0) {
+    const completedHabits =
+        document.getElementById("completedHabits");
+
+    const pendingHabits =
+        document.getElementById("pendingHabits");
+
+
+    // Total habits
+
+    const total = habits.length;
+
+
+    // Completed habits
+
+    const completed =
+        habits.filter(function(habit) {
+
+            return habit.completed;
+
+        }).length;
+
+
+    // Pending habits
+
+    const pending =
+        total - completed;
+
+
+    // Update statistics
+
+    totalHabits.innerText = total;
+
+    completedHabits.innerText = completed;
+
+    pendingHabits.innerText = pending;
+
+
+    // Progress
+
+    if (total === 0) {
 
         progress.style.width = "0%";
 
@@ -294,16 +334,8 @@ function updateProgress() {
     }
 
 
-    const completedHabits =
-        habits.filter(function(habit) {
-
-            return habit.completed;
-
-        });
-
-
     const percentage =
-        (completedHabits.length / habits.length) * 100;
+        (completed / total) * 100;
 
 
     progress.style.width =
