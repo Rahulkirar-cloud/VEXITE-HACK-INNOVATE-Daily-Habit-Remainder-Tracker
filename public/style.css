@@ -1,0 +1,164 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f2f5f9;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 700px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #777;
+    margin-bottom: 30px;
+}
+
+/* Form */
+
+.habit-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.habit-form input {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+}
+
+#habitInput {
+    flex: 1;
+}
+
+.habit-form button {
+    border: none;
+    padding: 12px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    background: #333;
+    color: white;
+}
+
+.habit-form button:hover {
+    background: #555;
+}
+
+/* Progress */
+
+.progress-section {
+    margin-bottom: 30px;
+}
+
+.progress-section h2,
+.habit-section h2 {
+    margin-bottom: 15px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 15px;
+    background: #ddd;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+#progress {
+    width: 0%;
+    height: 100%;
+    background: #4caf50;
+    transition: 0.3s;
+}
+
+#progressText {
+    margin-top: 8px;
+    color: #555;
+}
+
+/* Habit */
+
+.habit-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    margin-bottom: 10px;
+    background: #f7f7f7;
+    border-radius: 10px;
+}
+
+.habit-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.habit-left input {
+    width: 20px;
+    height: 20px;
+}
+
+.habit-name {
+    font-size: 17px;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: #999;
+}
+
+.habit-time {
+    color: #777;
+    font-size: 14px;
+}
+
+.delete-btn {
+    border: none;
+    background: #e74c3c;
+    color: white;
+    padding: 7px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background: #c0392b;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .habit-form {
+        flex-direction: column;
+    }
+
+    .habit-form input,
+    .habit-form button {
+        width: 100%;
+    }
+
+    .habit-item {
+        gap: 10px;
+    }
+}
