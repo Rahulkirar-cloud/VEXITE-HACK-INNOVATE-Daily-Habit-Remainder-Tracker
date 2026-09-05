@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,16 +20,9 @@
         <!-- Add Habit -->
         <div class="habit-form">
 
-            <input 
-                type="text" 
-                id="habitInput" 
-                placeholder="Enter your habit"
-            >
+            <input type="text" id="habitInput" placeholder="Enter your habit">
 
-            <input 
-                type="time" 
-                id="timeInput"
-            >
+            <input type="time" id="timeInput">
 
             <button onclick="addHabit()">Add Habit</button>
 
@@ -53,7 +47,9 @@
             <h2>My Habits</h2>
 
             <div id="habitList"></div>
-
+            <button class="clear-btn" onclick="clearAllHabits()">
+                Clear All Habits
+            </button>
         </div>
 
     </div>
@@ -61,4 +57,5 @@
     <script src="script.js"></script>
 
 </body>
+
 </html>
