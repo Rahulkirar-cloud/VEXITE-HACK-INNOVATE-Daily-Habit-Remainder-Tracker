@@ -314,3 +314,56 @@ function updateProgress() {
         Math.round(percentage) +
         "% Completed";
 }
+
+// REQUEST NOTIFICATION PERMISSION
+
+if ("Notification" in window) {
+
+    Notification.requestPermission();
+
+}
+function checkReminders() {
+
+    const now = new Date();
+
+    const currentHours =
+        String(now.getHours()).padStart(2, "0");
+
+    const currentMinutes =
+        String(now.getMinutes()).padStart(2, "0");
+
+    const currentTime =
+        currentHours + ":" + currentMinutes;
+
+
+    habits.forEach(function(habit) {
+
+        if (
+            habit.time === currentTime &&
+            !habit.completed
+        ) {
+
+            showNotification(habit.name);
+
+        }
+
+    });
+}
+// SHOW NOTIFICATION
+
+function showNotification(habitName) {
+
+    if (Notification.permission === "granted") {
+
+        new Notification("🔔 Habit Reminder", {
+
+            body: "Time to do: " + habitName,
+
+        });
+
+    }
+
+}
+// CHECK REMINDER EVERY MINUTE
+
+setInterval(checkReminders, 60000);
