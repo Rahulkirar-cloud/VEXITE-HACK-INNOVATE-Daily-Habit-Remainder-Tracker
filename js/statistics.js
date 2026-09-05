@@ -307,7 +307,8 @@ function updateWeeklyCalendar() {
 // ==============================
 
 updateProgress();
-
 updateStreak();
 
-updateWeeklyCalendar();
+if (document.getElementById("weekCalendar")) {
+    updateWeeklyCalendar();
+}

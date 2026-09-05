@@ -110,3 +110,39 @@ if (savedDarkMode === "true") {
 }
 
 updateDarkModeButton();
+// ==============================
+// TIME BASED GREETING
+// ==============================
+
+function updateGreeting() {
+
+    const greeting =
+        document.getElementById("greeting");
+
+    if (!greeting) return;
+
+    const hour = new Date().getHours();
+
+    if (hour >= 5 && hour < 12) {
+
+        greeting.innerText =
+            "Good Morning! ☀️";
+
+    } else if (hour >= 12 && hour < 17) {
+
+        greeting.innerText =
+            "Good Afternoon! 🌤️";
+
+    } else if (hour >= 17 && hour < 21) {
+
+        greeting.innerText =
+            "Good Evening! 🌆";
+
+    } else {
+
+        greeting.innerText =
+            "Good Night! 🌙";
+    }
+}
+
+updateGreeting();

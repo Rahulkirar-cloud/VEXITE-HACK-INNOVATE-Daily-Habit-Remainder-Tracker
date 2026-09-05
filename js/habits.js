@@ -107,10 +107,7 @@ function displayHabits() {
         ).value;
 
 
-    const today =
-        new Date()
-            .toISOString()
-            .split("T")[0];
+ const today = new Date().toISOString().split("T")[0];
 
 
     filteredHabits =
@@ -295,46 +292,37 @@ function displayHabits() {
 
 function toggleHabit(id) {
 
-    const today =
-        new Date()
-            .toISOString()
-            .split("T")[0];
+    const today = new Date()
+        .toISOString()
+        .split("T")[0];
 
+    const habit = habits.find(function(habit) {
+        return habit.id === id;
+    });
 
-    habits.forEach(
-        function(habit) {
+    if (!habit) {
+        return;
+    }
 
-            if (habit.id === id) {
+    // Old data ke liye
+    if (!Array.isArray(habit.completedDates)) {
+        habit.completedDates = [];
+    }
 
-                if (
-                    !Array.isArray(
-                        habit.completedDates
-                    )
-                ) {
+    // Agar aaj complete hai → uncomplete
+    if (habit.completedDates.includes(today)) {
 
-                    habit.completedDates = [];
-                }
+        habit.completedDates =
+            habit.completedDates.filter(function(date) {
+                return date !== today;
+            });
 
+    } 
+    // Agar complete nahi hai → complete
+    else {
 
-                const index =
-                    habit.completedDates
-                        .indexOf(today);
-
-
-                if (index !== -1) {
-
-                    habit.completedDates
-                        .splice(index, 1);
-
-                } else {
-
-                    habit.completedDates
-                        .push(today);
-                }
-            }
-        }
-    );
-
+        habit.completedDates.push(today);
+    }
 
     saveHabits();
 
